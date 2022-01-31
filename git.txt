@@ -1,0 +1,94 @@
+Полезная ссылка
+https://htmlacademy.ru/blog/boost/frontend/git-console
+
+===================
+== ГЛОБАЛЬНЫЕ НАСТРОЙКИ GIT
+Задаём пользовательские настройки:
+$ git config --global user.email=inbox@drozdov.info
+$ git config --global user.name=transmetter
+$ git config --global color.ui=auto
+$ git config --global core.editor vim
+
+Посмотреть настройки:
+$ git config --list
+
+== ОСНОВНАЯ РАБОТА С GIT
+Инициируем локальную работу гит в данной папке
+$ git init
+
+Варианты добавления изменённых данных в гит для последующего коммита
+$ git add filename
+$ git add -A 
+$ git add .
+
+Коммитим:
+$ git commit -m "ваше сообщение"
+
+
+== ПУБЛИКАЦИЯ GitHub
+Закидываем ~/.ssh/id_rsa.pub на сайт https://github.com/settings/profile
+(GitHub -> Settings -> SSH and GPG keys -> SSH keys -> New SSH key)
+
+Клонируем репозиторий "project" (git@github.com:transmetter/project.git)
+из GitHub к себе в локальную папку:
+$ git clone git@github.com:transmetter/project.git
+
+Посмотреть подключение origin-а:
+$ git remote -v
+
+Скачать последние обновления текущей ветки
+$ git pull 
+
+Залить в удалённый репозиторий все локальные изменения 
+$ git push
+
+Синхронизироваться из удалённого репа к себе (по всем веткам и изменениям)
+$ git fetch 
+
+
+
+== РАБОТА С ИСТОРИЕЙ
+Сброс состояния файла на последнее закоммиченное в git
+$ git restore filename
+
+Показать историю коммитов
+$ git log --oneline
+
+Сбросить состояние репозитория на определенный коммит
+$ git reset c7b9010
+
+Показать историю действий (включая переходы к другим коммитам)
+$ git reflog
+
+Отмена последствий коммита (Создать новый коммит, который отменяет действия предыдущего коммита)
+$ git revert c7b9010
+
+
+== BRANCHES. ВЕТКИ.
+Показать ветки
+$ git branch
+
+Создать ветку "dev"
+$ git branch dev
+
+Переключиться на ветку "dev"
+$ git checkout dev
+
+Создать ветку "dev-master" из последнего состояния ветки "master"
+$ git branch dev-master master
+
+Переименовать ветку:
+$ git branch -m old-name new-name
+
+Переключиться на новую ветку, одновременно создавая её
+$ git checkout -b dev-test
+Переключено на новую ветку «dev-test»
+
+
+
+
+
+
+
+
+
